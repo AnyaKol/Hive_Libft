@@ -1,0 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/14 16:41:28 by akolupae          #+#    #+#             */
+/*   Updated: 2025/04/15 11:43:56 by akolupae         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_isdigit.c"
+#include "ft_isalpha.c"
+
+int	ft_isalnum(int c)
+{
+	if ((ft_isdigit((unsigned char) c) != 0) || (ft_isalpha((unsigned char)c) != 0))
+	{
+		return (8);
+	}
+	return (0);
+}
