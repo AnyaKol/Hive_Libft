@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 #include <ctype.h>
-#include "../ft_isascii.c"
+#include "../libft.h"
 
 void	test_input(char input);
 void	ft_putnbr(int nb);

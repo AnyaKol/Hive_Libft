@@ -1,14 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/04/16 15:29:34 by akolupae          #+#    #+#              #
+#    Updated: 2025/04/16 15:55:19 by akolupae         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
 
-SRC = ft_isalpha.c \
+HDR = libft.h
+
+SRC = \ 
+	ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
 	ft_isprint.c \
-	ft_strlen.c \
+#	ft_strlen.c \
 	ft_memset.c \
 	ft_bzero.c \
 	ft_memcpy.c \
@@ -38,11 +53,23 @@ SRC = ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
+#B_SRC = \
+	ft_lstnew \
+	ft_lstadd_front \
+	ft_lstsize \
+	ft_lstlast \
+	ft_lstadd_back \
+	ft_lstdelone \
+	ft_lstclear \
+	ft_lstiter \
+	ft_lstmap \
+
 OBJ = $(SRC:.c=.o)
+#B_OBJ = $(B_SRC:.c=.o)
 
 all: $(NAME) clean
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(HDR)
 	ar -rc $(NAME) $(OBJ)
 
 $(OBJ): $(SRC)
@@ -56,4 +83,8 @@ fclean:
 
 re: fclean all
 
-.PHONY: all clean fclean re
+#bonus: $(NAME) $(B_OBJ) clean
+#	ar -rc $(NAME) $(B_OBJ)
+	
+
+.PHONY: all clean fclean re #bonus
