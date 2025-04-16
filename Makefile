@@ -23,7 +23,7 @@ SRC = \
 	ft_isalnum.c \
 	ft_isascii.c \
 	ft_isprint.c \
-#	ft_strlen.c \
+	ft_strlen.c \
 #	ft_memset.c \
 #	ft_bzero.c \
 #	ft_memcpy.c \
