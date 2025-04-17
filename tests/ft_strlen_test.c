@@ -42,7 +42,7 @@ int	main(int argc, char **argv)
 
 void	test_input(const char *input)
 {
-	if ((strlen(input) == 0) == (ft_strlen(input) == 0))
+	if (strlen(input) == ft_strlen(input))
 	{
 		write(1, "\npass ", 6);
 		ft_putnbr(strlen(input));

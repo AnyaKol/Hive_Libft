@@ -6,18 +6,24 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:29:04 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/16 18:32:51 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/17 19:15:10 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*char_s;
 
+	char_s = (char *) s;
+	if (s == NULL)
+		return ;
 	i = 0;
 	while (i < n)
 	{
-		s[i] = '\0';
+		char_s[i] = '\0';
 		i++;
 	}
 	return ;

@@ -6,18 +6,24 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:33:30 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/16 18:36:52 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/17 17:40:01 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
+	char	*char_src;
+	char	*char_dest;
 
+	char_src = (char *) src;
+	char_dest = (char *) dest;
 	i = 0;
 	while (i < n)
 	{
-		dest[i] = src[i];
+		char_dest[i] = char_src[i];
 		i++;
 	}
 	return (dest);
