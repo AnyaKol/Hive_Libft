@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 16:56:55 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/17 15:53:31 by akolupae         ###   ########.fr       */
+/*   Created: 2025/04/17 15:03:57 by akolupae          #+#    #+#             */
+/*   Updated: 2025/04/17 15:20:25 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t	ft_strlen(const char *s)
+size_t	strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	len;
+	size_t	i;
 
-	len = 0;
-	while (s[len] != '\0')
+	i = 0;
+	while (i < size - 1 && src[i] != '\0')
 	{
-		len++;
+		dst[i] = src[i];
+		i++;
 	}
-	len = len * sizeof(const char);
-	return (len);
+	dst[i] = '\0';
+	return (i);
 }

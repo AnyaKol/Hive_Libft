@@ -6,25 +6,32 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:40:37 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/16 18:59:07 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/17 14:58:54 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t		i;
-	const char	temp[n];
+	size_t	i;
 
-	i = 0;
-	while (i < n)
+	i = n - 1;
+	while (i > 0)
 	{
-		temp[i] = src[i];
-		i++;
+		if (&src[i] == dest)
+		{
+			i = n - 1;
+			while (i >= 0)
+			{
+				dest[i] = src[i];
+				i--;
+			}
+			return (dest);
+		}
+		i--;
 	}
-	i = 0;
 	while (i < n)
 	{
-		dest[i] = temp[i];
+		dest[i] = src[i];
 		i++;
 	}
 	return (dest);
