@@ -6,7 +6,7 @@
 #    By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/16 15:29:34 by akolupae          #+#    #+#              #
-#    Updated: 2025/04/18 13:12:33 by akolupae         ###   ########.fr        #
+#    Updated: 2025/04/18 13:43:30 by akolupae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ SRC = \
 OBJ = $(SRC:.c=.o)
 #B_OBJ = $(B_SRC:.c=.o)
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
