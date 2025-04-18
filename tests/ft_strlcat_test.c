@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 15:03:57 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/18 15:28:43 by akolupae         ###   ########.fr       */
+/*   Created: 2025/04/14 16:41:28 by akolupae          #+#    #+#             */
+/*   Updated: 2025/04/18 15:36:56 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
+#include <string.h>
+#include "../libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+int	main(void)
 {
-	size_t	i;
+	char	dest[10];
+	const char	src[] = "abcd";
+	size_t	size;
+	int	n;
 
-	i = 0;
-	while (i < size - 1 && src[i] != '\0')
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (i);
+	n = 3;
+	size = ft_strlcpy(dest, src, 3);
+	write(1, dest, 3);
+	if (dest[n - 1] == '\0')
+		write(1, "\nis null-terminated", 19);
+	else
+		write(1, "\nnot null-terminated", 20);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:41:28 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/17 20:45:38 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/18 15:13:48 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(void)
 	}
 	else
 	{
-		write(2, "\nbzero:\n", 10);
+		write(2, "\nbzero:\n", 8);
 		write(2, s1, n);
 		write(2, "\nMy function:\n", 14);
 		write(2, s2, n);

@@ -1,67 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy_test.c                                   :+:      :+:    :+:   */
+/*   ft_strlcpy_test.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:41:28 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/18 15:14:19 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/18 15:54:22 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <string.h>
-#include <stdbool.h>
 #include "../libft.h"
 
-bool	compare(char *s1, char *s2, int n);
+void	ft_putnbr(int nb);
 
 int	main(void)
 {
-	int	c;
-	size_t	n;
-	char	s1[10];
-	char	s2[10];
-	char	d1[10];
-	char	d2[10];
+	char	dest[10];
+	const char	src[] = "123456789";
+	int	n;
+	size_t	len;
 
-	c = 97;
-	n = 4;
-	memset(s1, c, n);
-	memset(s2, c, n);
-	write(1, s1, n);
+	n = 15;
+	len = ft_strlcpy(dest, src, n);
+	write(1, "length is ", 10);
+	ft_putnbr(len);
 	write(1, "\n", 1);
-	write(1, s2, n);
-	memcpy(d1, s1, n);
-	ft_memcpy(d2, s2, n);
-	if (compare(d1, d2, n))
-	{
-		write(1, "\npass\n", 6);
-		write(1, d1, n);
-		write(1, "\n", 1);
-		write(1, d2, n);
-	}
+	write(1, dest, len);
+	if (dest[len] == '\0')
+		write(1, "\nis null-terminated", 19);
 	else
-	{
-		write(2, "\nmemcpy:\n", 9);
-		write(2, d1, n);
-		write(2, "\nMy function:\n", 14);
-		write(2, d2, n);
-	}
+		write(2, "\nnot null-terminated", 20);
 	return (0);
 }
 
-bool	compare(char *s1, char *s2, int n)
+void	ft_putnbr(int nb)
 {
-	int	i;
+	long int	lnb;
+	char		digit;
 
-	i = 0;
-	while (i < n)
+	lnb = nb;
+	if (lnb < 0)
 	{
-		if (s1[i] != s2[i])
-			return (false);
-		i++;
+		write(1, "-", 1);
+		lnb = -lnb;
 	}
-	return (true);
+	if (lnb > 9)
+	{
+		ft_putnbr(lnb / 10);
+	}
+	digit = lnb % 10 + '0';
+	write(1, &digit, 1);
 }
