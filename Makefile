@@ -6,7 +6,7 @@
 #    By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/16 15:29:34 by akolupae          #+#    #+#              #
-#    Updated: 2025/04/18 13:43:30 by akolupae         ###   ########.fr        #
+#    Updated: 2025/04/19 17:00:42 by akolupae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,8 @@ SRC = \
 	ft_strlcat.c \
 	ft_toupper.c \
 	ft_tolower.c \
-#	ft_strchr.c \
-#	ft_strrchr.c \
+	ft_strchr.c \
+	ft_strrchr.c \
 #	ft_strncmp.c \
 #	ft_memchr.c \
 #	ft_memcmp.c \
