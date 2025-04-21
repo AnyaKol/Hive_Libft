@@ -12,8 +12,7 @@
 
 #include <unistd.h>
 #include "../libft.h"
-#include "ft_putnbr.c"
-#include "ft_putstr.c"
+#include "templib.h"
 
 void	test_input(const char *input);
 

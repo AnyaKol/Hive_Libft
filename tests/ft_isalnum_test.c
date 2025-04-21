@@ -13,7 +13,7 @@
 #include <unistd.h>
 #include <ctype.h>
 #include "../libft.h"
-#include "ft_putnbr.c"
+#include "templib.h"
 
 void	test_input(char input);
 
