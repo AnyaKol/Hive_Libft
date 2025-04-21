@@ -16,7 +16,6 @@
 #include "ft_putstr.c"
 
 void	test_input(const char *s, char *input, size_t len);
-void	ft_putstr(const char *s);
 
 int	main(int argc, char **argv)
 {

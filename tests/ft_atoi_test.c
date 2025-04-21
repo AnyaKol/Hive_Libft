@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen_test.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_test.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:41:28 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/16 18:09:15 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/21 16:01:53 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <string.h>
 #include "../libft.h"
 #include "ft_putnbr.c"
+#include "ft_putstr.c"
 
 void	test_input(const char *input);
 
@@ -22,12 +22,15 @@ int	main(int argc, char **argv)
 	int	i;
 
 	if (argc == 1)
-		test_input("");
+		test_input(NULL);
 	else if (argc > 1)
 	{
 		i = 1;
 		while (i < argc)
 		{
+			write(1, "string: ", 8);
+			ft_putstr(argv[1]);
+			write(1, "\n", 1);
 			test_input(argv[i]);
 			i++;
 		}
@@ -41,10 +44,10 @@ int	main(int argc, char **argv)
 
 void	test_input(const char *input)
 {
-	if (strlen(input) == ft_strlen(input))
+	if (atoi(input) == ft_atoi(input))
 		write(1, "\nPASS\n", 6);
-	write(1, "\nstrlen: ", 10);
-	ft_putnbr(strlen(input));
+	write(1, "\natoi: ", 7);
+	ft_putnbr(atoi(input));
 	write(1, "\nMy function: ", 14);
-	ft_putnbr(ft_strlen(input));
+	ft_putnbr(ft_atoi(input));
 }
