@@ -13,10 +13,9 @@
 #include <unistd.h>
 #include <string.h>
 #include "../libft.h"
-#include <bsd/string.h>
+#include "ft_putnbr.c"
 
 void	test_input(const char *input);
-void	ft_putnbr(int nb);
 
 int	main(int argc, char **argv)
 {
@@ -57,23 +56,4 @@ void	test_input(const char *input)
 		ft_putnbr(ft_strlen(input));
 	}
 	return ;
-}
-
-void	ft_putnbr(int nb)
-{
-	long int	lnb;
-	char		digit;
-
-	lnb = nb;
-	if (lnb < 0)
-	{
-		write(1, "-", 1);
-		lnb = -lnb;
-	}
-	if (lnb > 9)
-	{
-		ft_putnbr(lnb / 10);
-	}
-	digit = lnb % 10 + '0';
-	write(1, &digit, 1);
 }

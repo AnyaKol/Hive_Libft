@@ -19,7 +19,7 @@ bool	compare(char *s1, char *s2, int n);
 
 int	main(void)
 {
-	int	c;
+	int		c;
 	size_t	n;
 	char	s1[10];
 	char	s2[10];

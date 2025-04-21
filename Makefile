@@ -6,7 +6,7 @@
 #    By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/16 15:29:34 by akolupae          #+#    #+#              #
-#    Updated: 2025/04/19 17:00:42 by akolupae         ###   ########.fr        #
+#    Updated: 2025/04/21 13:23:56 by akolupae         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ SRC = \
 	ft_strncmp.c \
 	ft_memchr.c \
 	ft_memcmp.c \
-#	ft_strnstr.c \
+	ft_strnstr.c \
 #	ft_atoi.c \
 #	ft_calloc.c \
 #	ft_strdup.c \
@@ -79,7 +79,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean:
-	clean rm -f $(NAME)
+	rm -f $(NAME) $(OBJ)
 
 re: fclean all
 

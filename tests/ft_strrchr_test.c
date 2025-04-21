@@ -13,9 +13,9 @@
 #include <unistd.h>
 #include <string.h>
 #include "../libft.h"
+#include "ft_putstr.c"
 
 void	test_input(const char *s, char input);
-void	ft_putstr(const char *s);
 
 int	main(int argc, char **argv)
 {
@@ -51,16 +51,4 @@ void	test_input(const char *s, char input)
 	write(1, " ", 1);
 	write(1, ft_strrchr(s, input), 1);
 	return ;
-}
-
-void	ft_putstr(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
 }

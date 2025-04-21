@@ -19,36 +19,23 @@ bool	compare(char *s1, char *s2, int n);
 
 int	main(void)
 {
-	int	c;
+	int		c;
 	size_t	n;
-	char	s1[10];
-	char	s2[10];
+	char	s[10];
 	char	d1[10];
 	char	d2[10];
 
 	c = 97;
 	n = 4;
-	memset(s1, c, n);
-	memset(s2, c, n);
-	write(1, s1, n);
-	write(1, "\n", 1);
-	write(1, s2, n);
-	memcpy(d1, s1, n);
-	ft_memcpy(d2, s2, n);
+	memset(s, c, n);
+	memcpy(d1, s, n);
+	ft_memcpy(d2, s, n);
 	if (compare(d1, d2, n))
-	{
-		write(1, "\npass\n", 6);
-		write(1, d1, n);
-		write(1, "\n", 1);
-		write(1, d2, n);
-	}
-	else
-	{
-		write(2, "\nmemcpy:\n", 9);
-		write(2, d1, n);
-		write(2, "\nMy function:\n", 14);
-		write(2, d2, n);
-	}
+		write(1, "\nPASS\n", 6);
+	write(2, "\nmemcpy:\n", 9);
+	write(2, d1, n);
+	write(2, "\nMy function:\n", 14);
+	write(2, d2, n);
 	return (0);
 }
 

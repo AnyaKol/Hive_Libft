@@ -13,9 +13,9 @@
 #include <unistd.h>
 #include <ctype.h>
 #include "../libft.h"
+#include "ft_putnbr.c"
 
 void	test_input(char input);
-void	ft_putnbr(int nb);
 
 int	main(int argc, char **argv)
 {
@@ -42,37 +42,9 @@ int	main(int argc, char **argv)
 void	test_input(char input)
 {
 	if ((isalnum(input) == 0) == (ft_isalnum(input) == 0))
-	{
-		write(1, "\npass ", 6);
-		ft_putnbr(isalnum(input));
-		write(1, " ", 1);
-		ft_putnbr(ft_isalnum(input));
-	}
-	else
-	{
-		write(1, "\nisalnum: ", 10);
-		ft_putnbr(isalnum(input));
-		write(1, "\nMy function: ", 14);
-		ft_putnbr(ft_isalnum(input));
-	}
-	return ;
-}
-
-void	ft_putnbr(int nb)
-{
-	long int	lnb;
-	char		digit;
-
-	lnb = nb;
-	if (lnb < 0)
-	{
-		write(1, "-", 1);
-		lnb = -lnb;
-	}
-	if (lnb > 9)
-	{
-		ft_putnbr(lnb / 10);
-	}
-	digit = lnb % 10 + '0';
-	write(1, &digit, 1);
+		write(1, "\nPASS\n", 6);
+	write(1, "\nisalnum: ", 10);
+	ft_putnbr(isalnum(input));
+	write(1, "\nMy function: ", 14);
+	ft_putnbr(ft_isalnum(input));
 }

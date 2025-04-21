@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy_test.c                                  :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 16:41:28 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/18 15:36:56 by akolupae         ###   ########.fr       */
+/*   Created: 2025/04/19 18:17:36 by akolupae          #+#    #+#             */
+/*   Updated: 2025/04/21 13:21:03 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include "../libft.h"
+#include <stddef.h>
 
-int	main(void)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char		dest[10];
-	const char	src[] = "abcd";
-	size_t		size;
-	int			n;
+	size_t	i;
+	size_t	j;
 
-	n = 3;
-	size = ft_strlcpy(dest, src, 3);
-	write(1, dest, 3);
-	if (dest[n - 1] == '\0')
-		write(1, "\nis null-terminated", 19);
-	else
-		write(1, "\nnot null-terminated", 20);
-	return (0);
+	if (little == NULL)
+		return ((char *) big);
+	i = 0;
+	while (big[i] != '\0' && i < len)
+	{
+		if (big[i] == little[0])
+		{
+			j = 0;
+			while (big[i + j] == little[j] && i + j < len)
+			{
+				if (little[j + 1] == '\0')
+					return ((char *) &big[i]);
+				j++;
+			}
+		}
+		i++;
+	}
+	return (NULL);	
 }

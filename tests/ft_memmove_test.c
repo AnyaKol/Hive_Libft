@@ -19,9 +19,9 @@ bool	compare(char *s1, char *s2, int n);
 
 int	main(void)
 {
-	size_t	n;
-	char	s1[] = "00001234";
-	char	s2[] = "00001234";
+	size_t		n;
+	const char	s1[] = "00001234";
+	const char	s2[] = "00001234";
 
 	n = 8;
 	memmove(&s1[2], &s1[4], 4);
