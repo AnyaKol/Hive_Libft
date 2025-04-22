@@ -14,7 +14,7 @@
 
 bool	check_space(char c);
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	sign;

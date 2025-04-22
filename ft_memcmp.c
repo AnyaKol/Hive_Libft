@@ -28,5 +28,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		dif = dif + char_s1[i] - char_s2[i];
 		i++;
 	}
-	return (dif);		
+	return (dif);
 }

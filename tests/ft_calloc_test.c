@@ -21,8 +21,8 @@ int	main(void)
 {
 	size_t	nmemb;
 	size_t	size;
-	void		*p1;
-	void		*p2;
+	void	*p1;
+	void	*p2;
 
 	nmemb = 10;
 	size = sizeof(int);
@@ -41,7 +41,7 @@ int	main(void)
 
 bool	compare(void *s1, void *s2, int n)
 {
-	int	i;
+	int				i;
 	unsigned char	*char_s1;
 	unsigned char	*char_s2;
 

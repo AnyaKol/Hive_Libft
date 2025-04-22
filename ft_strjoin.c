@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 18:17:36 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/21 13:21:03 by akolupae         ###   ########.fr       */
+/*   Created: 2025/04/22 12:02:18 by akolupae          #+#    #+#             */
+/*   Updated: 2025/04/22 12:11:16 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
+	size_t	len1;
+	size_t	len2;
 	size_t	i;
-	size_t	j;
+	char	*s_join;
 
-	if (little == NULL)
-		return ((char *) big);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	s_join = (char *) malloc((len1 + len2 + 1) * sizeof(char));
+	if (s_join == NULL)
+		return (NULL);
 	i = 0;
-	while (big[i] != '\0' && i < len)
+	while (i < len1)
 	{
-		if (big[i] == little[0])
-		{
-			j = 0;
-			while (big[i + j] == little[j] && i + j < len)
-			{
-				if (little[j + 1] == '\0')
-					return ((char *) &big[i]);
-				j++;
-			}
-		}
+		s_join[i] = s1[i];
 		i++;
 	}
-	return (NULL);
+	i = 0;
+	while (i < len2)
+	{
+		s_join[len1 + i] = s2[i];
+		i++;
+	}
+	s_join[len1 + len2] = '\0';
+	return (s_join);
 }

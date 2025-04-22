@@ -27,5 +27,5 @@ char	*ft_strdup(const char *s)
 	while (s[i] != '\0')
 		s_copy[i] = s[i];
 	s_copy[i] = '\0';
-	return (s_copy);	
+	return (s_copy);
 }
