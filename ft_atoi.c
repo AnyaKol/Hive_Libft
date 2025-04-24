@@ -6,19 +6,20 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 15:28:30 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/21 15:48:59 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/24 19:58:45 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
+#include <limits.h>
 
 bool	check_space(char c);
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	sign;
-	int	result;
+	int			i;
+	int			sign;
+	long int	result;
 
 	i = 0;
 	sign = 1;
@@ -34,6 +35,8 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		result = result * 10 + (nptr[i] - '0');
+		if (result > INT_MAX)
+			return (0);
 		i++;
 	}
 	result = result * sign;
