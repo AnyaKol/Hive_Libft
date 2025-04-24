@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:59:44 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/24 20:26:52 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/24 20:58:31 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ void	test_input(char *input)
 {
 	char	*s_dup;
 
-	s_dup = ft_strdup(input);
+	write(1, "string 1: ", 10);
 	ft_putendl_fd(input, 1);
+	s_dup = ft_strdup((const char *) input);
+	write(1, "string 2: ", 10);
 	ft_putendl_fd(s_dup, 1);
 	if (ft_strncmp(input, s_dup, ft_strlen(input)) == 0)
 		write(1, "PASS\n", 5);
