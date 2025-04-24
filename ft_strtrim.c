@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 12:50:23 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/22 15:55:42 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:55:15 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	s_trim = (char *) malloc ((end - start + 1) * sizeof(char));
 	if (s_trim == NULL)
 		return (NULL);
-	strlcpy(s_trim, &s1[start], end - start + 1);
+	ft_strlcpy(s_trim, &s1[start], end - start + 1);
 	return (s_trim);
 }
 
