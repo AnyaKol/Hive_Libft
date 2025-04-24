@@ -10,12 +10,12 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-CFLAGS = -Wall -Werror -Wextra -g
-
 NAME = libft.a
 
 HDR = libft.h
+
+CC = cc
+CFLAGS = -Wall -Werror -Wextra -g
 
 SRC = \
 	ft_isalpha.c \
@@ -53,24 +53,27 @@ SRC = \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
-#B_SRC = \
-#	ft_lstnew \
-#	ft_lstadd_front \
-#	ft_lstsize \
-#	ft_lstlast \
-#	ft_lstadd_back \
-#	ft_lstdelone \
-#	ft_lstclear \
-#	ft_lstiter \
-#	ft_lstmap \
+B_SRC = \
+	ft_lstnew.c \
+	ft_lstadd_front.c \
+	ft_lstsize.c \
+	ft_lstlast.c \
+	ft_lstadd_back.c \
+	ft_lstdelone.c \
+	ft_lstclear.c \
+	ft_lstiter.c \
+	ft_lstmap.c \
 
 OBJ = $(SRC:.c=.o)
-#B_OBJ = $(B_SRC:.c=.o)
+B_OBJ = $(B_SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
+
+bonus: $(NAME) $(B_OBJ)
+	ar -rc $(NAME) $(B_OBJ)
 
 %.o: %.c $(HDR)
 	$(CC) $(CFLAGS) -o $@ -c $<
@@ -78,13 +81,9 @@ $(NAME): $(OBJ)
 clean:
 	rm -f $(OBJ)
 
-fclean:
-	rm -f $(NAME) $(OBJ)
+fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
-
-#bonus: $(NAME) $(B_OBJ)
-#	ar -rc $(NAME) $(B_OBJ)
-	
 
 .PHONY: all clean fclean re bonus
