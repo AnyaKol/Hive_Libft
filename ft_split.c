@@ -6,15 +6,15 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:27:40 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/24 16:17:19 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:41:48 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdbool.h>
 
-size_t	count_words(char const *s, char c);
-size_t	split_word(char *dest, const char *src, char c);
+static size_t	count_words(char const *s, char c);
+static char	*split_word(size_t *src_i, const char *src, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -33,7 +33,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[j] != c)
 		{
-			j = j + split_word(arr[j], &s[j], c);
+			arr[i] = split_word(&j, &s[j], c);
 			i++;
 		}
 		j++;
@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-size_t	count_words(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
 	size_t	i;
 	bool	new_wrd;
@@ -65,22 +65,25 @@ size_t	count_words(char const *s, char c)
 	return (words);
 }
 
-size_t	split_word(char *dest, const char *src, char c)
+static char	*split_word(size_t *src_i, const char *src, char c)
 {
 	size_t	i;
 	size_t	len;
+	char	*dest;
 
 	len = 0;
-	while (src[len] != c)
+	while (src[len] != c && src[len] != '\0')
 		len++;
+	*src_i += len;
 	dest = (char *) malloc ((len + 1) * sizeof(char));
 	if (dest == NULL)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	return (len);
+	dest[i] = '\0';
+	return (dest);
 }
