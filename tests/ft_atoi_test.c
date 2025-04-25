@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "../libft.h"
-#include "templib.h"
 
 void	test_input(const char *input);
 
@@ -29,7 +28,7 @@ int	main(int argc, char **argv)
 		while (i < argc)
 		{
 			write(1, "string: ", 8);
-			ft_putstr(argv[1]);
+			ft_putstr_fd(argv[1], 1);
 			write(1, "\n", 1);
 			test_input(argv[i]);
 			i++;
@@ -47,7 +46,7 @@ void	test_input(const char *input)
 	if (atoi(input) == ft_atoi(input))
 		write(1, "\nPASS\n", 6);
 	write(1, "\natoi: ", 7);
-	ft_putnbr(atoi(input));
+	ft_putnbr_fd(atoi(input), 1);
 	write(1, "\nMy function: ", 14);
-	ft_putnbr(ft_atoi(input));
+	ft_putnbr_fd(ft_atoi(input), 1);
 }

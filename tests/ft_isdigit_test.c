@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <ctype.h>
 #include "../libft.h"
-#include "templib.h"
 
 void	test_input(char input);
 
@@ -44,7 +43,7 @@ void	test_input(char input)
 	if ((isdigit(input) == 0) == (ft_isdigit(input) == 0))
 		write(1, "\nPASS\n", 6);
 	write(1, "\nisdigit: ", 10);
-	ft_putnbr(isdigit(input));
+	ft_putnbr_fd(isdigit(input), 1);
 	write(1, "\nMy function: ", 14);
-	ft_putnbr(ft_isdigit(input));
+	ft_putnbr_fd(ft_isdigit(input), 1);
 }

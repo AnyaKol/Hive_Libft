@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	int	i;
 
 	if (argc == 1)
-		test_input("\0");
+		test_input("");
 	else if (argc > 1)
 	{
 		i = 1;

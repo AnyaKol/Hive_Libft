@@ -12,7 +12,6 @@
 
 #include <unistd.h>
 #include "../libft.h"
-#include "templib.h"
 
 void	test_input(const char *s, char *input, size_t len);
 
@@ -24,7 +23,7 @@ int	main(int argc, char **argv)
 
 	len = 8;
 	write(1, "string: ", 8);
-	ft_putstr(s);
+	ft_putstr_fd(s, 1);
 	write(1, "\n", 1);
 	if (argc == 1)
 		test_input(s, NULL, len);
@@ -47,10 +46,10 @@ int	main(int argc, char **argv)
 void	test_input(const char *s, char *input, size_t len)
 {
 	write(1, "lenth: ", 7);
-	ft_putnbr(len);
+	ft_putnbr_fd(len, 1);
 	write(1, "\n", 1);
 	if (ft_strnstr(s, input, len) == NULL)
 		write(1, "NULL", 4);
 	else
-		ft_putstr(ft_strnstr(s, input, len));
+		ft_putstr_fd(ft_strnstr(s, input, len), 1);
 }

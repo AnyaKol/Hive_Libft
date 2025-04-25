@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	int	i;
 
 	if (argc == 1)
-		test_input("\0");
+		test_input("");
 	else if (argc > 1)
 	{
 		i = 1;
@@ -42,12 +42,12 @@ void	test_input(char *input)
 	const char	*str = "12345";
 
 	n = 4;
-	if (strncmp(input, str, n)  == ft_strncmp(input, str, n))
+	if (strncmp(input, str, n) == ft_strncmp(input, str, n))
 		write(1, "PASS\n", 5);
 	write(1, "string 1: ", 10);
-	ft_putendl_fd((char	*) str, 1);
+	ft_putendl_fd((char *) str, 1);
 	write(1, "string 2: ", 10);
-	ft_putendl_fd((char *)input, 1);
+	ft_putendl_fd((char *) input, 1);
 	write(1, "strncmp: ", 9);
 	ft_putnbr_fd(strncmp(input, str, n), 1);
 	write(1, "\nMy function: ", 14);

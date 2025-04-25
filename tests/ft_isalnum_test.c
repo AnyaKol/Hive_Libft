@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <ctype.h>
 #include "../libft.h"
-#include "templib.h"
 
 void	test_input(char input);
 
@@ -44,7 +43,7 @@ void	test_input(char input)
 	if ((isalnum(input) == 0) == (ft_isalnum(input) == 0))
 		write(1, "\nPASS\n", 6);
 	write(1, "\nisalnum: ", 10);
-	ft_putnbr(isalnum(input));
+	ft_putnbr_fd(isalnum(input), 1);
 	write(1, "\nMy function: ", 14);
-	ft_putnbr(ft_isalnum(input));
+	ft_putnbr_fd(ft_isalnum(input), 1);
 }

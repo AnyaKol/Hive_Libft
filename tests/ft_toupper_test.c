@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <ctype.h>
 #include "../libft.h"
-#include "templib.h"
 
 void	test_input(char input);
 
@@ -44,7 +43,7 @@ void	test_input(char input)
 	if ((toupper(input) == 0) == (ft_toupper(input) == 0))
 		write(1, "\nPASS\n", 6);
 	write(1, "\ntoupper: ", 10);
-	ft_putnbr(toupper(input));
+	ft_putnbr_fd(toupper(input), 1);
 	write(1, "\nMy function: ", 14);
-	ft_putnbr(ft_toupper(input));
+	ft_putnbr_fd(ft_toupper(input), 1);
 }

@@ -12,7 +12,6 @@
 
 #include <unistd.h>
 #include "../libft.h"
-#include "templib.h"
 
 int	main(void)
 {
@@ -24,17 +23,15 @@ int	main(void)
 	n = 5;
 	len = ft_strlcpy(dest, src, n);
 	write(1, "length: ", 8);
-	ft_putnbr(len);
-	write(1, "\n", 1);
-	write(1, "size passed: ", 13);
-	ft_putnbr(n);
-	write(1, "\n", 1);
+	ft_putnbr_fd(len, 1);
+	write(1, "\nsize passed: ", 14);
+	ft_putnbr_fd(n, 1);
 	if (n > len + 1)
 		n = len + 1;
 	else if (n == 0)
 		n = 1;
-	write(1, "dest: ", 6);
-	ft_putstr(dest);
+	write(1, "\ndest: ", 7);
+	ft_putstr_fd(dest, 1);
 	if (dest[n - 1] == '\0')
 		write(1, "\nis null-terminated", 19);
 	else

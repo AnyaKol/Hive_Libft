@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-static int		count_digits(long int n);
+static int	count_digits(long int n);
 static void	fill_str(char *str_end, long int n);
 
 char	*ft_itoa(int n)

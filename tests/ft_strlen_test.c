@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <string.h>
 #include "../libft.h"
-#include "templib.h"
 
 void	test_input(const char *input);
 
@@ -44,7 +43,7 @@ void	test_input(const char *input)
 	if (strlen(input) == ft_strlen(input))
 		write(1, "\nPASS\n", 6);
 	write(1, "\nstrlen: ", 10);
-	ft_putnbr(strlen(input));
+	ft_putnbr_fd(strlen(input), 1);
 	write(1, "\nMy function: ", 14);
-	ft_putnbr(ft_strlen(input));
+	ft_putnbr_fd(ft_strlen(input), 1);
 }

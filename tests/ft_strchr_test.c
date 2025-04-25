@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <string.h>
 #include "../libft.h"
-#include "templib.h"
 
 void	test_input(const char *s, char input);
 
@@ -23,7 +22,7 @@ int	main(int argc, char **argv)
 	const char	s[] = "123456789";
 
 	write(1, "string: ", 8);
-	ft_putstr(s);
+	ft_putstr_fd(s, 1);
 	write(1, "\n", 1);
 	if (argc == 1)
 		test_input(s, '\0');
