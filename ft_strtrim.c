@@ -14,7 +14,7 @@
 #include <stdbool.h>
 #include "libft.h"
 
-bool	check_set(char c, const char *set);
+static bool	check_set(char c, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (s_trim);
 }
 
-bool	check_set(const char c, const char *set)
+static bool	check_set(const char c, const char *set)
 {
 	size_t	i;
 

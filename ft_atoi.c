@@ -13,7 +13,7 @@
 #include <stdbool.h>
 #include <limits.h>
 
-bool	check_space(char c);
+static bool	check_space(char c);
 
 int	ft_atoi(const char *nptr)
 {
@@ -43,7 +43,7 @@ int	ft_atoi(const char *nptr)
 	return (result);
 }
 
-bool	check_space(char c)
+static bool	check_space(char c)
 {
 	if (c == ' ' || c == '\f' || c == '\n')
 		return (true);

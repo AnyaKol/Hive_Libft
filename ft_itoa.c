@@ -12,8 +12,8 @@
 
 #include <stdlib.h>
 
-int		count_digits(long int n);
-void	fill_str(char *str_end, long int n);
+static int		count_digits(long int n);
+static void	fill_str(char *str_end, long int n);
 
 char	*ft_itoa(int n)
 {
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-int	count_digits(long int n)
+static int	count_digits(long int n)
 {
 	int	digits;
 
@@ -56,7 +56,7 @@ int	count_digits(long int n)
 	return (digits);
 }
 
-void	fill_str(char *str_end, long int n)
+static void	fill_str(char *str_end, long int n)
 {
 	if (n > 9)
 		fill_str(str_end - 1, n / 10);
