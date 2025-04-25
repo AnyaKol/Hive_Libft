@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:27:40 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/25 12:41:48 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/25 12:53:05 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <stdbool.h>
 
 static size_t	count_words(char const *s, char c);
-static char	*split_word(size_t *src_i, const char *src, char c);
+static char		*split_word(size_t *src_i, const char *src, char c);
+static void		free_arr(char **arr);
 
 char	**ft_split(char const *s, char c)
 {
@@ -34,6 +35,12 @@ char	**ft_split(char const *s, char c)
 		if (s[j] != c)
 		{
 			arr[i] = split_word(&j, &s[j], c);
+			if (arr[i] == NULL)
+			{
+				free_arr(arr);
+				free(arr);
+				return (NULL);
+			}
 			i++;
 		}
 		j++;
@@ -86,4 +93,17 @@ static char	*split_word(size_t *src_i, const char *src, char c)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
+
+static void	free_arr(char **arr)
+{
+	size_t	i;
+
+	i = 0;
+	while (arr[i] != NULL)
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr[i]);
 }
