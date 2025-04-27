@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:38:28 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/24 17:44:28 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/27 16:50:31 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		len;
+	t_list	*temp;
 
-	if (lst == NULL)
-		return (0);
-	len = 1;
-	while (lst->next != NULL)
+	len = 0;
+	temp = lst;
+	while (temp != NULL)
 	{
 		len++;
-		lst = lst->next;
+		temp = temp->next;
 	}
 	return (len);
 }
