@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:34:43 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/24 17:38:09 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/27 16:27:31 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	new->next = *lst;
-	lst = &new;
+	*lst = new;
 }
