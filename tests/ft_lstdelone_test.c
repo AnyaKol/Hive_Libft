@@ -36,9 +36,9 @@ int	main(void)
 	ft_lstadd_back(&head, n2);
 	ft_lstadd_back(&head, n3);
 	print_list(head);
-//	ft_lstdelone(n2, del);
-//	n1->next = n3;
-//	print_list(head);
+	ft_lstdelone(n2, del);
+	n1->next = n3;
+	print_list(head);
 	del(n1);
 	del(n2);
 	del(n3);

@@ -17,10 +17,10 @@ void	print_list(t_list *head);
 
 int	main(void)
 {
-	t_list	*head;
-	t_list	n1, n2, n3;
+	t_list		*head;
+	t_list		n1, n2, n3;
 	const char	*str = "12345";
-	int	len;
+	int			len;
 
 	head = &n1;
 	n1.content = (void *) &str[0];

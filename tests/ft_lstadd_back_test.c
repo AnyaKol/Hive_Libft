@@ -39,8 +39,8 @@ int	main(int argc, char **argv)
 
 void	test_input(char *input)
 {
-	t_list	*head, *new;
-	t_list	n1, n2, n3;
+	t_list		*head, *new;
+	t_list		n1, n2, n3;
 	const char	*str = "12345";
 
 	head = &n1;

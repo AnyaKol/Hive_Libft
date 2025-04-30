@@ -17,8 +17,8 @@ void	print_list(t_list *head);
 
 int	main(void)
 {
-	t_list	*head, *last;
-	t_list	n1, n2, n3;
+	t_list		*head, *last;
+	t_list		n1, n2, n3;
 	const char	*str = "12345";
 
 	head = &n1;

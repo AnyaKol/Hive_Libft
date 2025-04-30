@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 16:41:28 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/18 15:09:12 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:25:14 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,14 @@ int	main(void)
 	const char	s2[] = "00001234";
 
 	n = 8;
-	memmove(&s1[2], &s1[4], 4);
-	ft_memmove(&s2[2], &s2[4], 4);
-	if (compare(s1, s2, n))
-	{
-		write(1, "\npass\n", 6);
-		write(1, s1, n);
-		write(1, "\n", 1);
-		write(1, s2, n);
-	}
-	else
-	{
-		write(2, "\nmemmove:\n", 10);
-		write(2, s1, n);
-		write(2, "\nMy function:\n", 14);
-		write(2, s2, n);
-	}
+	memmove((void *) &s1[2], (void *) &s1[4], 4);
+	ft_memmove((void *) &s2[2], (void *) &s2[4], 4);
+	if (compare((char *) &s1[0], (char *) &s2[0], n))
+		write(1, "\nPASS\n", 6);
+	write(2, "\nmemmove:\n", 10);
+	write(2, &s1[0], n);
+	write(2, "\nMy function:\n", 14);
+	write(2, &s2[0], n);
 	return (0);
 }
 

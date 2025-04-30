@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 16:27:40 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/25 12:53:05 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/30 12:35:30 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,26 @@
 static size_t	count_words(char const *s, char c);
 static char		*split_word(size_t *src_i, const char *src, char c);
 static void		free_arr(char **arr);
+void			split_str(char **arr, size_t words, char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	size_t	words;
-	size_t	i;
-	size_t	j;
 
 	words = count_words(s, c);
 	arr = (char **) malloc ((words + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
+	split_str(arr, words, s, c);
+	return (arr);
+}
+
+void	split_str(char **arr, size_t words, char const *s, char c)
+{	
+	size_t	i;
+	size_t	j;
+
 	i = 0;
 	j = 0;
 	while (i < words)
@@ -39,14 +47,13 @@ char	**ft_split(char const *s, char c)
 			{
 				free_arr(arr);
 				free(arr);
-				return (NULL);
+				return ;
 			}
 			i++;
 		}
 		j++;
 	}
 	arr[words] = NULL;
-	return (arr);
 }
 
 static size_t	count_words(char const *s, char c)
