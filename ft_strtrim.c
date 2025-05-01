@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdbool.h>
 #include "libft.h"
 
 static bool	check_set(char c, const char *set);

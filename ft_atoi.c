@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
-#include <limits.h>
+#include "libft.h"
 
 static bool	check_space(char c);
 

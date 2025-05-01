@@ -15,7 +15,7 @@ NAME = libft.a
 HDR = libft.h
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Werror -Wextra
 
 SRC = \
 	ft_isalpha.c \
@@ -72,8 +72,11 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar -rc $(NAME) $(OBJ)
 
-bonus: $(NAME) $(B_OBJ)
+bonus: .bonus
+
+.bonus: $(NAME) $(B_OBJ)
 	ar -rc $(NAME) $(B_OBJ)
+	touch .bonus
 
 %.o: %.c $(HDR)
 	$(CC) $(CFLAGS) -o $@ -c $<
@@ -82,7 +85,7 @@ clean:
 	rm -f $(OBJ) $(B_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) .bonus
 
 re: fclean all
 

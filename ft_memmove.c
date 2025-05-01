@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 static void	reverse(char **dest, char *src, size_t i);
 static void	forvard(char **dest, char *src, size_t n);

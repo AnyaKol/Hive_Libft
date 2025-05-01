@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdbool.h>
+#include "libft.h"
 
 static size_t	count_words(char const *s, char c);
 static char		*split_word(size_t *src_i, const char *src, char c);
