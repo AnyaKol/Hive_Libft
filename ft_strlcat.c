@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 15:49:34 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/19 15:50:38 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/30 16:01:55 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 
 	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if (size <= dst_len)
+		return (src_len + size);
 	i = 0;
 	while (src[i] != '\0' && dst_len + i < size - 1)
 	{
 		dst[dst_len + i] = src[i];
 		i++;
 	}
-	if (i == src_len)
+	if (dst_len + i < size)
 		dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }

@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 18:14:07 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/21 18:30:22 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/30 13:39:41 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ int	main(void)
 	p2 = ft_calloc(nmemb, size);
 	if (compare(p1, p2, nmemb))
 		write(1, "\nPASS\n", 6);
-	write(2, "\ncalloc:\n", 9);
-	write(2, p1, nmemb);
-	write(2, "\nMy function:\n", 14);
-	write(2, p2, nmemb);
 	free(p1);
 	free(p2);
 	return (0);

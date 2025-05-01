@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 15:28:30 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/24 19:58:45 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/04/30 15:16:54 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		result = result * 10 + (nptr[i] - '0');
-		if (result > INT_MAX)
+		if ((result > INT_MAX && sign == 1) || (-result) < INT_MIN)
 			return (0);
 		i++;
 	}
@@ -45,9 +45,7 @@ int	ft_atoi(const char *nptr)
 
 static bool	check_space(char c)
 {
-	if (c == ' ' || c == '\f' || c == '\n')
-		return (true);
-	else if (c == '\r' || c == '\t' || c == '\v')
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
 		return (true);
 	return (false);
 }
