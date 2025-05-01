@@ -16,7 +16,7 @@
 static size_t	count_words(char const *s, char c);
 static char		*split_word(size_t *src_i, const char *src, char c);
 static void		free_arr(char **arr);
-void			split_str(char **arr, size_t words, char const *s, char c);
+static void		split_str(char **arr, size_t words, char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -31,7 +31,7 @@ char	**ft_split(char const *s, char c)
 	return (arr);
 }
 
-void	split_str(char **arr, size_t words, char const *s, char c)
+static void	split_str(char **arr, size_t words, char const *s, char c)
 {	
 	size_t	i;
 	size_t	j;
