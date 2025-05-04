@@ -6,7 +6,7 @@
 /*   By: akolupae <akolupae@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 18:33:30 by akolupae          #+#    #+#             */
-/*   Updated: 2025/04/17 17:40:01 by akolupae         ###   ########.fr       */
+/*   Updated: 2025/05/04 17:20:29 by akolupae         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*char_src;
 	char	*char_dest;
 
+	if (src == NULL || dest == NULL)
+		return (dest);
 	char_src = (char *) src;
 	char_dest = (char *) dest;
 	i = 0;

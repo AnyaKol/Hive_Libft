@@ -18,8 +18,10 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 	char	*s_copy;
 
+	if (s == NULL)
+		return (NULL);
 	len = ft_strlen(s);
-	s_copy = (char *) malloc((len + 1) * sizeof(const char));
+	s_copy = ft_calloc(len + 1, sizeof(char));
 	if (s_copy == NULL)
 		return (NULL);
 	i = 0;
@@ -28,6 +30,5 @@ char	*ft_strdup(const char *s)
 		s_copy[i] = s[i];
 		i++;
 	}
-	s_copy[i] = '\0';
 	return (s_copy);
 }
