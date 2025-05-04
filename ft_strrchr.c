@@ -17,6 +17,8 @@ char	*ft_strrchr(const char *s, int c)
 	int	i;
 	int	last;
 
+	if (s == NULL)
+		return (NULL);
 	i = 0;
 	last = -1;
 	while (s[i] != '\0')

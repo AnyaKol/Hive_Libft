@@ -88,7 +88,7 @@ static char	*split_word(size_t *src_i, const char *src, char c)
 	while (src[len] != c && src[len] != '\0')
 		len++;
 	*src_i += len;
-	dest = (char *) malloc ((len + 1) * sizeof(char));
+	dest = ft_calloc (len + 1, sizeof(char));
 	if (dest == NULL)
 		return (NULL);
 	i = 0;
@@ -97,7 +97,6 @@ static char	*split_word(size_t *src_i, const char *src, char c)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
 	return (dest);
 }
 

@@ -33,13 +33,12 @@ char	*ft_itoa(int n)
 		digits = 1;
 	else
 		digits = count_digits(ln);
-	str = (char *) malloc ((digits + sign + 1) * sizeof(char));
+	str = ft_calloc (digits + sign + 1, sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	if (sign == 1)
 		str[0] = '-';
 	fill_str(&str[digits + sign - 1], ln);
-	str[digits + sign] = '\0';
 	return (str);
 }
 

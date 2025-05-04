@@ -70,12 +70,12 @@ B_OBJ = $(B_SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rc $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
 bonus: .bonus
 
 .bonus: $(NAME) $(B_OBJ)
-	ar -rc $(NAME) $(B_OBJ)
+	ar -rcs $(NAME) $(B_OBJ)
 	touch .bonus
 
 %.o: %.c $(HDR)
